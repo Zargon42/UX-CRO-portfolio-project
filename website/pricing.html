@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Pricing — Conversion Test</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="site">
+		<header>
+			<div class="brand"><a href="index.html">Acme CRO</a></div>
+			<nav class="nav">
+				<a href="index.html">Home</a>
+			</nav>
+		</header>
+
+		<main>
+			<h2>Choose a plan</h2>
+			<p class="muted">Three tiers for teams of any size. Click a plan to sign up — the selected plan will be passed to the signup form via URL param.</p>
+
+			<div class="plans">
+				<div class="plan-card">
+					<div class="plan-title">Basic</div>
+					<div class="plan-price">Free</div>
+					<div class="plan-features">Great for personal testing and ideas.</div>
+					<a href="signup.html?plan=Basic" class="btn plan-cta btn-ghost">Choose Basic</a>
+				</div>
+
+				<div class="plan-card">
+					<div class="plan-title">Pro</div>
+					<div class="plan-price">$29 / mo</div>
+					<div class="plan-features">Standard experiments, analytics, and A/B reporting.</div>
+					<a href="signup.html?plan=Pro" class="btn plan-cta btn-primary cta-component">Choose Pro</a>
+				</div>
+
+				<div class="plan-card">
+					<div class="plan-title">Team</div>
+					<div class="plan-price">$99 / mo</div>
+					<div class="plan-features">Collaborative features, role management, and priority support.</div>
+					<a href="signup.html?plan=Team" class="btn plan-cta btn-primary">Choose Team</a>
+				</div>
+			</div>
+
+			<p class="note">This page is intentionally structured so CTA copy, color, and position can be swapped easily for A/B tests.</p>
+		</main>
+
+		<footer>
+			<p class="muted">Questions? Email demo@acme.test</p>
+		</footer>
+	</div>
+</body>
+</html>
+

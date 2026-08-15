@@ -1,0 +1,34 @@
+/* Shared styles for the funnel pages */
+:root{
+  --bg:#0f172a; /* dark navy */
+  --card:#0b1220;
+  --muted:#94a3b8;
+  --accent:#06b6d4; /* cyan */
+  --accent-2:#0ea5a3; /* teal */
+  --white:#ffffff;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#071029 0%, #071a2b 100%);color:var(--white);margin:0;padding:0;line-height:1.4}
+.site{max-width:980px;margin:40px auto;padding:24px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+header a{color:var(--muted);text-decoration:none;margin-left:18px}
+.nav{font-weight:600}
+.hero{display:flex;flex-direction:column;gap:16px;padding:48px 24px;background:rgba(255,255,255,0.02);border-radius:12px}
+.hero h1{font-size:34px;margin:0}
+.hero p{color:var(--muted);margin:0;max-width:58ch}
+.btn{display:inline-block;padding:12px 18px;border-radius:8px;text-decoration:none;color:var(--white);font-weight:700}
+.btn-primary{background:var(--accent);box-shadow:0 6px 18px rgba(6,182,212,0.18)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:20px}
+.plan-card{background:var(--card);padding:20px;border-radius:12px}
+.plan-title{font-size:18px;margin:0 0 8px 0}
+.plan-price{font-size:28px;margin:0 0 8px 0}
+.plan-features{color:var(--muted);margin:8px 0 16px 0}
+.plan-cta{width:100%;text-align:center}
+.muted{color:var(--muted)}
+.form{background:var(--card);padding:20px;border-radius:12px}
+.form label{display:block;margin-bottom:6px;color:var(--muted);font-weight:600}
+.form input[type=text],.form input[type=email],.form input[type=password]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);margin-bottom:12px}
+.note{font-size:13px;color:var(--muted)}
+footer{margin-top:28px;color:var(--muted);font-size:13px}
+.selected-plan{font-weight:700;color:var(--accent-2)}
