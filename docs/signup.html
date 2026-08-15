@@ -1,70 +1,82 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sign up — Conversion Test</title>
-  <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E63PSSZZ46"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E63PSSZZ46');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sign up — Conversion Test</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="site">
-    <header>
-      <div class="brand"><a href="index.html">Acme CRO</a></div>
-      <nav class="nav">
-        <a href="pricing.html">Pricing</a>
-      </nav>
-    </header>
+    <div class="site">
+        <header>
+            <div class="brand"><a href="index.html">Acme CRO</a></div>
+            <nav class="nav">
+                <a href="pricing.html">Pricing</a>
+            </nav>
+        </header>
 
-    <main>
-      <h2>Create your account</h2>
-      <p class="muted">Fill in details to join. The selected plan is pre-filled from the pricing page.</p>
+        <main>
+            <h2>Create your account</h2>
+            <p class="muted">Fill in details to join. The selected plan is pre-filled from the pricing page.</p>
 
-      <div class="form">
-        <form id="signup-form">
-          <label for="name">Full name</label>
-          <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+            <div class="form">
+                <form id="signup-form">
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" placeholder="Jane Doe" required>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required>
 
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password" placeholder="Choose a password" required>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Choose a password" required>
 
-          <input id="plan" name="plan" type="hidden" value="Basic">
-          <p class="note">Selected plan: <span id="selected-plan" class="selected-plan">Basic</span></p>
+                    <input id="plan" name="plan" type="hidden" value="Basic">
+                    <p class="note">Selected plan: <span id="selected-plan" class="selected-plan">Basic</span></p>
 
-          <button id="submit" class="btn btn-primary" type="submit">Create account</button>
-        </form>
-      </div>
-    </main>
+                    <button id="submit" class="btn btn-primary" type="submit">Create account</button>
+                </form>
+            </div>
+        </main>
 
-    <footer>
-      <p class="muted">By continuing you agree to the demo terms.</p>
-    </footer>
-  </div>
+        <footer>
+            <p class="muted">By continuing you agree to the demo terms.</p>
+        </footer>
+    </div>
 
-  <script>
-    // Read ?plan=... from URL and prefill hidden field + UI
-    (function(){
-      function param(key){
-        var params = new URLSearchParams(window.location.search);
-        return params.get(key);
-      }
-      var p = param('plan');
-      if(p){
-        document.getElementById('plan').value = p;
-        var el = document.getElementById('selected-plan');
-        if(el) el.textContent = p;
-      }
+    <script>
+        // Read ?plan=... from URL and prefill hidden field + UI
+        (function () {
+            function param(key) {
+                var params = new URLSearchParams(window.location.search);
+                return params.get(key);
+            }
+            var p = param('plan');
+            if (p) {
+                document.getElementById('plan').value = p;
+                var el = document.getElementById('selected-plan');
+                if (el) el.textContent = p;
+            }
 
-      var form = document.getElementById('signup-form');
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        var plan = document.getElementById('plan').value || 'Basic';
-        // Normally we'd send data to a backend. For this demo, redirect to confirmation.
-        window.location.href = 'confirmation.html?plan=' + encodeURIComponent(plan);
-      });
-    })();
-  </script>
+            var form = document.getElementById('signup-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var plan = document.getElementById('plan').value || 'Basic';
+                // Normally we'd send data to a backend. For this demo, redirect to confirmation.
+                window.location.href = 'confirmation.html?plan=' + encodeURIComponent(plan);
+            });
+        })();
+    </script>
 </body>
+
 </html>

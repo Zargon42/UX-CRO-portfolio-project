@@ -1,36 +1,48 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Thank you — Conversion Test</title>
-  <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E63PSSZZ46"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E63PSSZZ46');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Thank you — Conversion Test</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="site">
-    <header>
-      <div class="brand"><a href="index.html">Acme CRO</a></div>
-    </header>
+    <div class="site">
+        <header>
+            <div class="brand"><a href="index.html">Acme CRO</a></div>
+        </header>
 
-    <main class="hero">
-      <h1>You're signed up</h1>
-      <p class="muted">Thanks for joining — your account has been created for the selected plan.</p>
-      <p class="note">Plan: <span id="plan" class="selected-plan">Basic</span></p>
-      <p class="muted">This page is the conversion endpoint in the demo funnel.</p>
-      <p><a href="index.html" class="btn btn-ghost">Back to home</a></p>
-    </main>
-  </div>
+        <main class="hero">
+            <h1>You're signed up</h1>
+            <p class="muted">Thanks for joining — your account has been created for the selected plan.</p>
+            <p class="note">Plan: <span id="plan" class="selected-plan">Basic</span></p>
+            <p class="muted">This page is the conversion endpoint in the demo funnel.</p>
+            <p><a href="index.html" class="btn btn-ghost">Back to home</a></p>
+        </main>
+    </div>
 
-  <script>
-    // Show plan if passed via ?plan=...
-    (function(){
-      var params = new URLSearchParams(window.location.search);
-      var p = params.get('plan');
-      if(p){
-        var el = document.getElementById('plan');
-        if(el) el.textContent = p;
-      }
-    })();
-  </script>
+    <script>
+        // Show plan if passed via ?plan=...
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var p = params.get('plan');
+            if (p) {
+                var el = document.getElementById('plan');
+                if (el) el.textContent = p;
+            }
+        })();
+    </script>
 </body>
+
 </html>
