@@ -36,21 +36,21 @@
                     <div class="plan-title">Basic</div>
                     <div class="plan-price">Free</div>
                     <div class="plan-features">Great for personal testing and ideas.</div>
-                    <a href="signup.html?plan=Basic" class="btn plan-cta btn-ghost">Choose Basic</a>
+                    <a href="signup.html?plan=Basic" class="btn plan-cta btn-ghost" data-plan="Basic">Choose Basic</a>
                 </div>
 
                 <div class="plan-card">
                     <div class="plan-title">Pro</div>
                     <div class="plan-price">$29 / mo</div>
                     <div class="plan-features">Standard experiments, analytics, and A/B reporting.</div>
-                    <a href="signup.html?plan=Pro" class="btn plan-cta btn-primary cta-component">Choose Pro</a>
+                    <a href="signup.html?plan=Pro" class="btn plan-cta btn-primary cta-component" data-plan="Pro">Choose Pro</a>
                 </div>
 
                 <div class="plan-card">
                     <div class="plan-title">Team</div>
                     <div class="plan-price">$99 / mo</div>
                     <div class="plan-features">Collaborative features, role management, and priority support.</div>
-                    <a href="signup.html?plan=Team" class="btn plan-cta btn-primary">Choose Team</a>
+                    <a href="signup.html?plan=Team" class="btn plan-cta btn-primary" data-plan="Team">Choose Team</a>
                 </div>
             </div>
 
@@ -62,6 +62,17 @@
             <p class="muted">Questions? Email demo@acme.test</p>
         </footer>
     </div>
+    <script>
+        document.querySelectorAll('.plan-cta').forEach(function (button) {
+            button.addEventListener('click', function () {
+                var planName = button.dataset.plan;
+                gtag('event', 'select_item', {
+                    item_list_name: 'Pricing Plans',
+                    items: [{ item_name: planName }]
+                });
+            });
+        });        
+    </script>
 </body>
 
 </html>
