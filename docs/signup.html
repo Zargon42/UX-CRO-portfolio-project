@@ -73,6 +73,7 @@
                 e.preventDefault();
                 var plan = document.getElementById('plan').value || 'Basic';
                 // Normally we'd send data to a backend. For this demo, redirect to confirmation.
+                gtag('event', 'sign_up', { 'method': 'email', 'plan': plan });
                 window.location.href = 'confirmation.html?plan=' + encodeURIComponent(plan);
             });
         })();
